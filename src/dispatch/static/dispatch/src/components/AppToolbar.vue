@@ -2,25 +2,17 @@
   <v-app-bar flat style="border-bottom: 1px solid #d2d2d2 !important" color="background0">
     <template #prepend>
       <router-link :to="{ name: 'IncidentOverview' }" style="text-decoration: none">
-        <span class="button font-weight-bold">D I S P A T C H</span>
+        <span class="button font-weight-bold">
+          <CompanyLogo />
+        </span>
       </router-link>
     </template>
     <organization-create-edit-dialog />
     <!--<v-app-bar-nav-icon @click="handleDrawerToggle" />-->
 
     <v-spacer />
-    <v-text-field
-      v-model="queryString"
-      hide-details
-      prepend-inner-icon="mdi-magnify"
-      label="Search"
-      clearable
-      variant="solo"
-      single-line
-      flat
-      bg-color="background2"
-      @keyup.enter="performSearch()"
-    />
+    <v-text-field v-model="queryString" hide-details prepend-inner-icon="mdi-magnify" label="Search" clearable
+      variant="solo" single-line flat bg-color="background2" @keyup.enter="performSearch()" />
     <v-spacer />
     <v-toolbar-items>
       <v-btn icon variant="text" @click="toggleDarkTheme">
@@ -31,25 +23,12 @@
       </v-btn>
       <v-btn icon variant="text">
         <v-icon>mdi-help-circle-outline</v-icon>
-        <v-menu activator="parent">
+        <v-menu activator="parent">fDIS
           <v-list density="compact">
-            <v-list-item
-              href="/api/v1/docs"
-              target="_blank"
-              title="API Documentation"
-              append-icon="mdi-open-in-new"
-            />
-            <v-list-item
-              href="https://netflix.github.io/dispatch/"
-              target="_blank"
-              title="App Documentation"
-              append-icon="mdi-open-in-new"
-            />
-            <v-list-item
-              v-if="currentVersion()"
-              @click="showCommitMessage"
-              append-icon="mdi-page-next-outline"
-            >
+            <v-list-item href="/api/v1/docs" target="_blank" title="API Documentation" append-icon="mdi-open-in-new" />
+            <v-list-item href="https://netflix.github.io/dispatch/" target="_blank" title="App Documentation"
+              append-icon="mdi-open-in-new" />
+            <v-list-item v-if="currentVersion()" @click="showCommitMessage" append-icon="mdi-page-next-outline">
               <v-list-item-title>
                 Current version: {{ formatHash(currentVersion()) }}
               </v-list-item-title>
@@ -92,14 +71,9 @@
             </v-list-item>
             <v-divider />
             <v-list-subheader>Experimental Features</v-list-subheader>
-            <v-switch
-              v-model="currentUser().experimental_features"
-              inset
-              class="ml-5"
-              color="blue"
+            <v-switch v-model="currentUser().experimental_features" inset class="ml-5" color="blue"
               @update:model-value="updateExperimentalFeatures()"
-              :label="currentUser().experimental_features ? 'Enabled' : 'Disabled'"
-            />
+              :label="currentUser().experimental_features ? 'Enabled' : 'Disabled'" />
             <v-divider />
             <v-list-subheader>Organizations</v-list-subheader>
             <v-list-item v-for="(item, i) in organizations" :key="i">
@@ -109,23 +83,15 @@
               <template #append>
                 <v-tooltip location="bottom">
                   <template #activator="{ props }">
-                    <v-btn
-                      icon="mdi-pencil-outline"
-                      variant="text"
-                      v-bind="props"
-                      @click="showCreateEditDialog(item)"
-                    />
+                    <v-btn icon="mdi-pencil-outline" variant="text" v-bind="props"
+                      @click="showCreateEditDialog(item)" />
                   </template>
                   <span>Edit Organization</span>
                 </v-tooltip>
                 <v-tooltip location="bottom">
                   <template #activator="{ props }">
-                    <v-btn
-                      @click="switchOrganizations(item.slug)"
-                      icon="mdi-swap-horizontal"
-                      variant="text"
-                      v-bind="props"
-                    />
+                    <v-btn @click="switchOrganizations(item.slug)" icon="mdi-swap-horizontal" variant="text"
+                      v-bind="props" />
                   </template>
                   <span>Switch Organization</span>
                 </v-tooltip>
@@ -148,6 +114,7 @@ import { formatHash } from "@/filters"
 import OrganizationApi from "@/organization/api"
 import OrganizationCreateEditDialog from "@/organization/CreateEditDialog.vue"
 import UserApi from "@/auth/api"
+import CompanyLogo from "@/components/CompanyLogo.vue";
 
 export default {
   name: "AppToolbar",

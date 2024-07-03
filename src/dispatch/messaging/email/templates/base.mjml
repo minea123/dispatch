@@ -34,7 +34,7 @@
     <mj-section full-width="full-width" background-color="#FAFAFA" padding-bottom="0">
       <mj-column>
         <mj-text color="#0F0F0F" font-weight="bold" text-transform="uppercase" font-size="16px" letter-spacing="1px" padding-top="30px">
-          D i s p a t c h
+          MJQE Ticket
         </mj-text>
       </mj-column>
     </mj-section>

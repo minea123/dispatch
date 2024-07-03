@@ -5,7 +5,9 @@
       <v-app-bar flat style="border-bottom: 1px solid #d2d2d2 !important" color="background0">
         <template #prepend>
           <router-link :to="{ name: 'CaseOverview' }" style="text-decoration: none">
-            <span class="button font-weight-bold">D I S P A T C H</span>
+            <span class="button font-weight-bold">
+              <CompanyLogo />
+            </span>
           </router-link>
         </template>
         <template #append>
@@ -34,6 +36,7 @@ import RouterUtils from "@/router/utils"
 import CaseApi from "@/case/api"
 import CaseSummaryTable from "@/case/CaseSummaryTable.vue"
 import OrganizationBanner from "@/organization/OrganizationBanner.vue"
+import CompanyLogo from "@/components/CompanyLogo.vue";
 
 export default {
   name: "CaseStatus",

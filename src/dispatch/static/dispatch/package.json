@@ -24,6 +24,7 @@
     "lint:fix": "eslint src --ext .js,.vue --fix",
     "preview": "vite preview --open --port 8080",
     "serve": "cross-env NODE_ENV=dev NODE_OPTIONS='--max-http-header-size=100000' vite",
+    "dev": "vite dev",
     "test": "vitest --dom",
     "preinstall": "node preinstall.js"
   },

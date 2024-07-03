@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     BaseCombobox: typeof import('./src/components/BaseCombobox.vue')['default']
     BasicLayout: typeof import('./src/components/layouts/BasicLayout.vue')['default']
     ColorPickerInput: typeof import('./src/components/ColorPickerInput.vue')['default']
+    CompanyLogo: typeof import('./src/components/CompanyLogo.vue')['default']
     DashboardLayout: typeof import('./src/components/layouts/DashboardLayout.vue')['default']
     DateChipGroupRelative: typeof import('./src/components/DateChipGroupRelative.vue')['default']
     DateTimePicker: typeof import('./src/components/DateTimePicker.vue')['default']
