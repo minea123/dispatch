@@ -6,7 +6,9 @@
       <v-app-bar flat style="border-bottom: 1px solid #d2d2d2 !important" color="background0">
         <template #prepend>
           <router-link :to="{ name: 'IncidentOverview' }" style="text-decoration: none">
-            <span class="button font-weight-bold">D I S P A T C H</span>
+            <span class="button font-weight-bold">
+              <CompanyLogo />
+            </span>
           </router-link>
         </template>
       </v-app-bar>
@@ -18,6 +20,7 @@
 <script>
 import NotificationSnackbarsWrapper from "@/components/NotificationSnackbarsWrapper.vue"
 import OrganizationBanner from "@/organization/OrganizationBanner.vue"
+import CompanyLogo from "@/components/CompanyLogo.vue";
 
 export default {
   components: {
